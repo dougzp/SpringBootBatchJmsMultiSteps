@@ -111,16 +111,6 @@ public class JobBatch  extends DefaultBatchConfigurer {
         jmsTemplate.setDefaultDestinationName(LOCAL_Q2);
         jmsTemplate.setReceiveTimeout(1000l);
         
-        jmsTemplate.browseSelected(LOCAL_Q1, new BrowserCallback<Integer>() {
-   
-
-			@Override
-			public Integer doInJms(Session session, QueueBrowser browser) throws JMSException {
-				// TODO Auto-generated method stub
-				return Collections.list(browser.getEnumeration()).size();
-			}
-        });
-        
         return jmsTemplate;
     }
 
